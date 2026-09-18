@@ -16,7 +16,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -176,6 +176,81 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -1px;
   margin-top: 12px;
 }
+.section-sub {
+  color: var(--muted);
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+/* PRODUCT SHOWCASE */
+.product-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.product-image {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.image-glow {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 80px rgba(109, 93, 252, 0.15);
+  pointer-events: none;
+}
+.product-features h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.product-desc {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.feature-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.feature-list li {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.feature-list li:last-child { border-bottom: none; }
+.feature-list .check {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.feature-list strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.feature-list span {
+  font-size: 13px;
+  color: var(--muted);
+}
 
 /* GRID */
 .grid {
@@ -291,6 +366,7 @@ summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 15px;
 }
 summary::after {
   content: '+';
@@ -299,13 +375,12 @@ summary::after {
   font-weight: 300;
   transition: transform 0.2s;
 }
-details[open] summary::after {
-  content: '−';
-}
+details[open] summary::after { content: '−'; }
 details p {
   margin-top: 16px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 /* FOOTER */
@@ -329,6 +404,13 @@ details p {
 .footer-links a { color: var(--muted); transition: color 0.2s; }
 .footer-links a:hover { color: var(--accent); }
 .copyright { color: #444; font-size: 13px; }
+
+@media (max-width: 900px) {
+  .product-showcase {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
 
 @media (max-width: 640px) {
   .nav-links { display: none; }
