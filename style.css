@@ -584,6 +584,7 @@ details p {
 .delay-4 { transition-delay: 0.35s; }
 .delay-5 { transition-delay: 0.45s; }
 .delay-6 { transition-delay: 0.55s; }
+.delay-7 { transition-delay: 0.65s; }
 
 /* ================== RESPONSIVE ================== */
 @media (max-width: 900px) {
